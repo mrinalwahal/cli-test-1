@@ -29,7 +29,7 @@ end;
 $$;
 CREATE TABLE IF NOT EXISTS public.test (
     id text NOT NULL,
-    value text NOT NULL
+    data text NOT NULL
 );
 CREATE TABLE IF NOT EXISTS public.users (
     id uuid DEFAULT public.gen_random_uuid() NOT NULL,
@@ -42,12 +42,4 @@ SELECT create_constraint_if_not_exists('public.test', 'test_pkey', 'PRIMARY KEY 
 SELECT create_constraint_if_not_exists('public.users', 'users_pkey', 'PRIMARY KEY (id);');
 DROP TRIGGER IF EXISTS set_public_users_updated_at ON public.users;
 CREATE TRIGGER set_public_users_updated_at BEFORE UPDATE ON public.users FOR EACH ROW EXECUTE FUNCTION public.set_current_timestamp_updated_at();
-
-
-INSERT INTO auth.roles (role)
-    VALUES ('user'), ('me'), ('anonymous') ON CONFLICT DO NOTHING;
-
-
-INSERT INTO auth.providers (provider)
-    VALUES ('github'), ('facebook'), ('twitter'), ('google'), ('apple'), ('linkedin'), ('windowslive'), ('spotify') ON CONFLICT DO NOTHING;
 
