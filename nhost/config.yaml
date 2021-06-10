@@ -10,13 +10,13 @@ services:
     admin_secret: hasura-admin-secret
   hasura_backend_plus:
     port: 9001
-    version: v2.5.0
+    version: v2.4.0
   minio:
     port: 9000
     version: latest
   postgres:
     port: 5432
-    version: 12
+    version: 12-v0.0.3
     user: postgres
     password: postgres
 authentication:
