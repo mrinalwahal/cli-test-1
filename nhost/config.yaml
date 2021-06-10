@@ -16,7 +16,7 @@ services:
     version: latest
   postgres:
     port: 5432
-    version: "12.0"
+    version: 12
     user: postgres
     password: postgres
 authentication:
