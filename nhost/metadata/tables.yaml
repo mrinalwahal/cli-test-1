@@ -1,7 +1,22 @@
 - table:
     schema: public
+    name: againremote
+- table:
+    schema: public
+    name: lowercasetest
+- table:
+    schema: public
+    name: pulltest
+- table:
+    schema: public
     name: test
 - table:
     schema: public
     name: testenum
   is_enum: true
+- table:
+    schema: public
+    name: tracktest
+- table:
+    schema: public
+    name: tracktestagain
